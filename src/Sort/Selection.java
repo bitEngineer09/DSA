@@ -11,10 +11,9 @@ public class Selection {
 
     static void selection(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            int last = arr.length - i - 1;
-            int maxIndex = getMaxIndex(arr, 0, last);
-
-            swap(arr, maxIndex, last);
+            int last = arr.length - i - 1; // unsorted part ka last index nikaalo
+            int maxIndex = getMaxIndex(arr, 0, last); // us unsorted part ka max element ka index find karo
+            swap(arr, maxIndex, last); // last position me swap kar do
         }
     }
 
@@ -24,6 +23,7 @@ public class Selection {
         arr[second] = temp;
     }
 
+    
     private static int getMaxIndex(int[] arr, int start, int end) {
         int max = start;
         for (int i = start; i <= end; i++) {
